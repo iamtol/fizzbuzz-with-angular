@@ -7,4 +7,31 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fizzbuzz';
+
+  input: number;
+  result: string;
+
+  onClick() {
+    if (this.input % 15 === 0) {
+      this.sayFizzBuzz();
+    } else if (this.input % 3 === 0) {
+      this.sayFizz();
+    } else if (this.input % 5 === 0) {
+      this.sayBuzz();
+    } else {
+      this.result = this.input.toString();
+    }
+  }
+
+  sayFizz() {
+    this.result = 'Fizz';
+  }
+
+  sayBuzz() {
+    this.result = 'Buzz';
+  }
+
+  sayFizzBuzz() {
+    this.result = 'FizzBuzz';
+  }
 }
